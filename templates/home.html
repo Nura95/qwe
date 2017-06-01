@@ -8,3 +8,32 @@
 
 </body>
 </html>
+
+
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ЗАГОЛОВОК</title>
+    <link rel="stylesheet" href={% static "PyCharm/qwe/core/static/dropzone/dropzone.css" %}>
+<script src={% static "PyCharm/qwe/core/static/dropzone/dropzone.js" %}></script>
+</head>
+<body>
+        <form method="POST">
+    {% csrf_token %}
+    <div class="dropzone-previews"></div>
+        <div class="fallback">
+    <input name="file" type="file" multiple="" />
+    <input type="submit" value="save">
+        </div>
+            <input type="datetime-local" name="datetime" />
+            <input type = "reset" id ="resetUploadFileForm" hidden>
+          </form>
+</body>
+</html>
+
+
+
+
+

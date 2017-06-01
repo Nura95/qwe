@@ -19,3 +19,18 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 ]
+
+from django.conf.urls import url
+from core import views
+urlpatterns =[
+url(r'^time/$',views.current_datetime),
+]
+
+from django.conf.urls import url
+from core import views
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns = [
+    url(r'^forms/$',views.upload_file),
+]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -10,3 +10,9 @@ class Signal(models.Model):
     data = JSONField()
     def __str__(self):
         return self.name
+
+
+class File(models.Model):
+    file = models.FileField(upload_to='item_files')
+    time_created = models.DateTimeField(auto_now_add=True)
+
