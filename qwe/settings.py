@@ -27,6 +27,22 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+STATIC_ROOT = BASE_DIR + '/static/'
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (os.path.join(BASE_DIR,"static"),
+)
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+)
+SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
+MEDIA_ROOT = os.path.join(SITE_ROOT, 'media')
+MEDIA_URL = '/media/'
+TEMPLATES = [{
+    'BACKEND': 'django.template.backends.django.DjangoTemplates',
+    'DIRS': [os.path.join(BASE_DIR, 'templates')],
+}]
 
 # Application definition
 
@@ -40,19 +56,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
 ]
-STATIC_ROOT = BASE_DIR + '/static/'
-STATIC_URL = '/static/'
-STATICFILES_DIRS = ( os.path.join(BASE_DIR,"static"),
-)
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
-)
-SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
-MEDIA_ROOT = os.path.join(SITE_ROOT, 'media')
-MEDIA_URL = '/media/'
-TEMPLATE_DIRS = os.path.join(SITE_ROOT, 'templates')
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
