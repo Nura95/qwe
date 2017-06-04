@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from core.forms import UploadFileForm
 from .utils import handle_uploaded_file
-
+from .models import File
 def index(request):
     return HttpResponse("Hello, world.")
 def upload_file(request):

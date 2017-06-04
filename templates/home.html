@@ -1,27 +1,11 @@
-{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>ЗАГОЛОВОК</title>
+<title>Dropzone simple example</title>
+    {% load staticfiles %}
     <link rel="stylesheet" href={% static "dropzone/dropzone.css" %}>
-<script src={% static "dropzone/dropzone.js" %}></script>
+    <script src={% static "dropzone/dropzone.js" %}></script>
 </head>
-<body>
-        <form method="POST">
-    {% csrf_token %}
-    <div class="dropzone-previews"></div>
-        <div class="fallback">
-    <input name="file" type="file" multiple="" />
-    <input type="submit" value="save">
-        </div>
-            <input type="datetime-local" name="datetime" />
-            <input type = "reset" id ="resetUploadFileForm" hidden>
-          </form>
-</body>
-</html>
-
-
-
-
-
+{% csrf_token %}
+    <form    class="dropzone"   method="POST" action= {%url "index" %} ></form>

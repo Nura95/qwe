@@ -20,6 +20,6 @@ from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
-    url(r'^forms/$',views.upload_file,name='upload_file'),
-    url(r'^$', views.index, name='index'),
-]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    url(r'^forms/$',views.upload_file,name ='upload_file'),
+    url(r'^$', views.index, name ='index'),
+]+(static(settings.STATIC_URL, document_root=settings.STATIC_ROOT))
